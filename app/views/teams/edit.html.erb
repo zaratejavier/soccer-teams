@@ -1,2 +1,20 @@
-<h1>Teams#edit</h1>
-<p>Find me in app/views/teams/edit.html.erb</p>
+
+<h2 class="ui header">
+  <i class="settings icon"></i>
+  <div class="content">
+    Team Settings
+    <div class="sub header">Edit your team name</div>
+  </div>
+
+<%= form_with(model: @team, local: true, class: "ui form") do |f|%>
+  <div class="field">
+    <%=f.label :name%>
+    <%= f.text_field :name, required: true, placeholder: "Name"%>
+  </div>
+  <%=f.submit%>
+<%end%>
+
+</h2>
+
+<%= link_to "Back", team_path%>
+

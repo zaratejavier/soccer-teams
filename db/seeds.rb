@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# teams = Team.create(Faker::Sports::Football.team)
+
+10.times do
+  @team = Team.create(name:Faker::Sports::Football.team)
+end
+
+puts "seeded!!!!!!!!!!!!!!!!!!!!!!!!!"
