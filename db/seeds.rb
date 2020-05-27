@@ -10,17 +10,19 @@
 
 10.times do
   @team = Team.create(name:Faker::Sports::Football.team)
-end
+
 
 10.times do
   @player = Player.create(
     name: Faker::Sports::Football.player,
     age: rand(18..50),
     position: Faker::Sports::Football.position,
-    height: 4..8,
-    weight: 100..300,
-    number: 1..50
+    height: rand(4..8),
+    weight: rand(100..300),
+    number: rand(1..50),
+    team_id: @team.id
    )
+end
 end
 
 puts "seeded!!!!!!!!!!!!!!!!!!!!!!!!!"
