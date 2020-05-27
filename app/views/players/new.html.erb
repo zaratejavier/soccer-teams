@@ -1,2 +1,4 @@
-<h1>Players#new</h1>
-<p>Find me in app/views/players/new.html.erb</p>
+
+
+<%=render 'form', team: @team, player: @animal%>
+<%= link_to "Back", team_players_path(@team) %>

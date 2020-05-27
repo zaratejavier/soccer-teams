@@ -24,8 +24,13 @@ class PlayersController < ApplicationController
     end
   end
 
+  def destroy
+    @player.destroy
+    redirect_to team_players_path
+  end
+
   def create
-    @player = @team.player.new(player_params)
+    @player = @team.players.new(player_params)
     if (@player.save)
       redirect_to [@team, @player]
     else
@@ -45,6 +50,6 @@ class PlayersController < ApplicationController
   end
 
   def player_params
-    params.require(:player).permit(:name)
+    params.require(:player).permit(:name, :age, :position, :height, :weight, :number)
   end
 end

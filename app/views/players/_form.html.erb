@@ -1,0 +1,23 @@
+<h1><%=@player.id ? 'Edit Player' : 'Create Player'%> </h1>
+<hr/>
+
+<%= form_with(model:[@team, @player], local: true, class: 'ui form') do |f|%>
+  <%=f.label :name, class:"field"%>
+  <%=f.text_field :name, required: true, autofocus: true%>
+  <br/>
+  <%=f.label :age, class:"field"%>
+  <%=f.text_field :age, required: true, autofocus: true%>
+  <br/>
+  <%=f.label :position, class:"field"%>
+  <%=f.text_field :position, required: true, autofocus: true%>
+  <br/>
+  <%=f.label :number, class:"field"%>
+  <%=f.text_field :number, required: true, autofocus: true%>
+  <br/>
+  <%=f.label :height, class:"field"%>
+  <%=f.text_field :height, required: true, autofocus: true%>
+    <br/>
+  <%=f.label :weight, class:"field"%>
+  <%=f.text_field :weight, required: true, autofocus: true%>
+  <%= f.submit nil, class: "ui button" %>
+<%end%>

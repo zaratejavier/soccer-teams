@@ -1,2 +1,12 @@
-<h1>Players#index</h1>
-<p>Find me in app/views/players/index.html.erb</p>
+<h1>Roster</h1>
+<%= link_to "Add new player",new_team_player_path(@team),class:'ui primary button'%>
+<ul>
+  <% @players.each do |player|%>
+    <li class="ui list"><%= link_to player.name, [@team, player]%></li>
+  <%end%>
+</ul>
+<%= link_to 'Back', teams_path%> 
+
+
+
+
